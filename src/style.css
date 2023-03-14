@@ -40,6 +40,13 @@ a:hover {
   padding: 5px;
 }
 
+.like-icon{
+    background-color: red;
+    border: 2px solid red;
+    width: 24px;
+    height: 24px;
+}
+
 .main-content {
   margin: 5% 3%;
   display: grid;
