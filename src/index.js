@@ -59,7 +59,7 @@ items.forEach((element,index) => {
 movies.className = 'item';
 movies.setAttribute('data-index', index);
       innerHTML = `
-    <img src="${element.image.medium}" alt="">
+    <img class = "content-img" src="${element.image.medium}" alt="">
     <div class="card-detail"><p class="card-name">${element.name}</p>
     <i id = "${element.id}" class='far fa-heart'></i></div>
     <div class="count-container"><span class="counter">0</span>
@@ -101,27 +101,32 @@ const displayPopUp =  ((element, id) =>{
     let innerHTML = '';
     innerHTML += `<div id = "${element.id}" class="popup-blur">
     <div class="popup-countainer">
-        <img class="comment-img" src="${element.image.original}" alt="">
+    <i class="fa fa-close"></i>
+        <div class ="img-container"><img class="comment-img" src="${element.image.original}" alt="">
+        </div>
         <h2 class="title">${element.name}</h2>
         <div class="detail">
-            <p class="langauge">${element.language}</p>
-            <p class="runtime">${element.runtime}</p>
+            <p class="langauge">Language: ${element.language}</p>
+            <p class="runtime">Runtime: ${element.runtime} mins</p>
         </div>
         <h3>Comments</h3>
         <div class="comment-section">
         </div>
-        <h3>Add a comment</h3>
-        <form action="submit">
+        <h4>Add a comment</h4>
+        <form class="form" action="submit">
             <input type="text" placeholder="Your name">
-            <textarea name="comment-text" id="" cols="30" rows="10" placeholder="Your insight"></textarea>
-            <button type="submit"></button>
+            <textarea name="comment-text" id="" cols="20" rows="5" placeholder="Your insight"></textarea>
+            <button id="submit" type="submit">Comment</button>
         </form>
     </div>
 </div>`
 const popUp = document.querySelector('.popUp');
 popUp.innerHTML = innerHTML;
 popUp.style.display = "block";
-
+const close = document.querySelector('.fa-close')
+close.addEventListener('click', () => {
+  popUp.style.display = "none"
+})
 })
 
 // const likes = async (id) => {
