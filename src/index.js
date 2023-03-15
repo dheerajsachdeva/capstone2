@@ -109,16 +109,19 @@ const displayPopUp =  ((element, id) =>{
             <p class="langauge">Language: ${element.language}</p>
             <p class="runtime">Runtime: ${element.runtime} mins</p>
         </div>
-        <h3>Comments</h3>
-        <div class="comment-section">
+        <div class ="summary"> 
+          <h4>Summry:</h4>
+          ${element.summary}
         </div>
+        <div class="comment-section">
+        <h3>Comments</h3>
         <h4>Add a comment</h4>
         <form class="form" action="submit">
             <input type="text" placeholder="Your name">
             <textarea name="comment-text" id="" cols="20" rows="5" placeholder="Your insight"></textarea>
             <button id="submit" type="submit">Comment</button>
         </form>
-    </div>
+        </div>
 </div>`
 const popUp = document.querySelector('.popUp');
 popUp.innerHTML = innerHTML;
