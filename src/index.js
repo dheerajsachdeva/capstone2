@@ -44,8 +44,8 @@ console.log("Hello")
   
 
 const displayShow = async () =>{
-  const data = await getLikes();
-  console.log(data)
+  // const data `= await getLikes();
+  // console.log(`data)
 const display = await getUser();
 let innerHTML ='';
 var items = display.slice(0,6);
@@ -70,22 +70,25 @@ movies.innerHTML = innerHTML;
 container.appendChild(movies);
 
 const likeButton = document.querySelector(
-  `.item[data-index="${index}"] .far`,
-);
+  `.item[data-index="${index}"] .far`);
 
-
+const commentButton = document.querySelector(`.item[data-index="${index}"] .commentBtn`)
+commentButton.addEventListener('click', async () => {
+displayPopUp(element, index)
+})
 
 likeButton.addEventListener('click', async () => {
-  
-  await likes(index);
-  // const data = await getLikes();
-  // console.log(data)
+    await likes(index);
+  const data = await getLikes();
   console.log("Like button", index)
   const itemIndex = await data.filter((item) => item.item_id === index);
   
   getNumberOfLikes(itemIndex[0]);
   
 });
+
+
+
 });
 
 }
@@ -98,7 +101,7 @@ const displayPopUp =  ((element, id) =>{
     let innerHTML = '';
     innerHTML += `<div id = "${element.id}" class="popup-blur">
     <div class="popup-countainer">
-        <img class="comment-img" src="" alt="">
+        <img class="comment-img" src="${element.image.original}" alt="">
         <h2 class="title">${element.name}</h2>
         <div class="detail">
             <p class="langauge">${element.language}</p>
@@ -121,17 +124,30 @@ popUp.style.display = "block";
 
 })
 
-const likes = async (id) => {
-    const options = {
+// const likes = async (id) => {
+//     const options = {
+//     method: 'POST',
+//     headers: {
+//       'Content-Type': 'application/json',
+//     },
+//     body: `{"item_id": "${id}"}`,
+//    };
+//   const response = await fetch(likeUrl, options);
+//   const show = await response.json();
+//  return show;
+// };
+
+const likes = async (index) => {
+  const dataStream = await fetch(likeUrl, {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/json',
+      'content-Type': 'application/json; charset=UTF-8',
     },
-    body: `{"item_id": "${id}"}`,
-   };
-  const response = await fetch(likeUrl, options);
-  const show = await response.json();
- return show;
+    body: JSON.stringify({
+      item_id: index,
+    }),
+  });
+  return dataStream;
 };
 
 const getLikes = async () => {
