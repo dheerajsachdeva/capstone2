@@ -61,7 +61,7 @@ movies.setAttribute('data-index', index);
       innerHTML = `
     <img class = "content-img" src="${element.image.medium}" alt="">
     <div class="card-detail"><p class="card-name">${element.name}</p>
-    <i id = "${element.id}" class='far fa-heart'></i></div>
+    <i id = "${element.id}" class='fa fa-heart'></i></div>
     <div class="count-container"><span class="counter">0</span>
     <p>likes</p></div>
     <button id = "${element.id}" type = "submit" class="commentBtn">Comments</button>
@@ -70,7 +70,7 @@ movies.innerHTML = innerHTML;
 container.appendChild(movies);
 
 const likeButton = document.querySelector(
-  `.item[data-index="${index}"] .far`);
+  `.item[data-index="${index}"] .fa-heart`);
 
 const commentButton = document.querySelector(`.item[data-index="${index}"] .commentBtn`)
 commentButton.addEventListener('click', async () => {
