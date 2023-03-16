@@ -10,7 +10,6 @@ logo.src = Movie
 const involvementId = 'VdUaJZjJhUjlpm3843JM';
 const likeUrl = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${involvementId}/likes/`;
 const commentUrl = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${involvementId}/comments`;
-// eslint-disable-next-line
 const newShow = async () => {
     const options = {
       method: 'POST',
@@ -31,50 +30,46 @@ const newShow = async () => {
 
 
   const getNumberOfLikes = (item) => {
-console.log("Hello")
-    console.log((document.querySelector(`.item[data-index="${item.item_id}"]`)))
     if (document.querySelector(`.item[data-index="${item.item_id}"]`)) {
       const data = document.querySelector(
         `.item[data-index="${item.item_id}"] .counter`,
       )
       data.textContent = item.likes;
-      console.log(data);
     }
   };
   
-
-  // var newArr= [];
-  // console.log(newArr);
-  // let totalMovies = () =>{
-
-  // }
+  const displayLikes = async (index) => {
+    await likes(index);
+  const data = await getLikes();
+  const itemIndex = await data.forEach((item) => getNumberOfLikes(item));
+    
+}
 
 const displayShow = async () =>{
-  // const data `= await getLikes();
-  // console.log(`data)
+  
+const movieCount = document.getElementById("movies-count")
 const display = await getUser();
 let innerHTML ='';
 var items = display.slice(0,6);
-// newArr = items.forEach ((_, index) => newArr.push(index));
-// const counters = await getLikes()
-// console.log(counters);
-// const movies = document.createElement('div');
-// movies.classList.add('card-container')
+movieCount.textContent = items.length
 const container = document.querySelector('.main-content');
 items.forEach((element,index) => {
   const movies = document.createElement('div');
+  const showMore = document.createElement('button');
 movies.className = 'item';
 movies.setAttribute('data-index', index);
       innerHTML = `
     <img class = "content-img" src="${element.image.medium}" alt="">
     <div class="card-detail"><p class="card-name">${element.name}</p>
     <i id = "${element.id}" class='fa fa-heart'></i></div>
-    <div class="count-container"><span class="counter">0</span>
+    <div class="count-container"><span class="counter"></span>
     <p>likes</p></div>
     <button id = "${element.id}" type = "submit" class="commentBtn">Comments</button>
 `
 movies.innerHTML = innerHTML;
 container.appendChild(movies);
+// container.appendChild(showMore);
+displayLikes(element.id)
 
 const likeButton = document.querySelector(
   `.item[data-index="${index}"] .fa-heart`);
@@ -83,7 +78,7 @@ const commentButton = document.querySelector(`.item[data-index="${index}"] .comm
 commentButton.addEventListener('click', async () => {
 displayPopUp(element, index)
 })
-getNumberOfLikes(element);
+
 likeButton.addEventListener('click', async () => {
     await likes(index);
   const data = await getLikes();
@@ -101,7 +96,6 @@ const appendComment = (comment) => {
   return commentList;
 };
 
-const hitLike = document.querySelector('.main-content');
 
 const displayPopUp =  async (element, index) =>{
   
