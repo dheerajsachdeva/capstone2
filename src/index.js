@@ -41,6 +41,7 @@ console.log("Hello")
       console.log(data);
     }
   };
+  
 
   // var newArr= [];
   // console.log(newArr);
@@ -82,7 +83,7 @@ const commentButton = document.querySelector(`.item[data-index="${index}"] .comm
 commentButton.addEventListener('click', async () => {
 displayPopUp(element, index)
 })
-
+getNumberOfLikes(element);
 likeButton.addEventListener('click', async () => {
     await likes(index);
   const data = await getLikes();
@@ -103,7 +104,7 @@ const appendComment = (comment) => {
 const hitLike = document.querySelector('.main-content');
 
 const displayPopUp =  async (element, index) =>{
-  console.log("Inside Displaypopup",index)
+  
     let innerHTML = '';
     innerHTML += `<div id = "${element.id}" class="popup-blur">
     <div class="popup-countainer">
@@ -139,12 +140,15 @@ close.addEventListener('click', () => {
 })
 
 const commentList = document.querySelector('.commentList')
+
   const comments = await getComment(index);
+  
+  console.log(comments);
 if (comments.length !== 0) {
   comments.forEach((comment) => {
     commentList.appendChild(appendComment(comment));
   });
-  document.querySelector('.comment-count').textContent = comments.length;
+  document.querySelector('#comment-count').textContent = comments.length;
 }
 
 
@@ -152,10 +156,11 @@ const form = document.querySelector('.form');
 form.addEventListener('submit', async (event) =>{
   event.preventDefault();
 const nameInput = document.querySelector('#name');
-const textInput = document.querySelector('#input');
-console.log("In event listener", index)
+const textInput = document.querySelector('#text');
+console.log("Inside Displaypopup",index)
 if (nameInput !== '' && textInput !== '') {
 await postComment(index, nameInput.value, textInput.value )
+console.log(postComment);
 const commentList = document.querySelector('.commentList')
 commentList.innerHTML = '';
       nameInput.value = '';
@@ -164,13 +169,16 @@ const comments = await getComment(index)
 comments.forEach((comment) => {
 commentList.appendChild(appendComment(comment));
 });
-document.querySelector('.comment-count').textContent = comments.length;
+document.querySelector('#comment-count').textContent = comments.length;
 }
 })
 
 }
 
+
+
 const likes = async (index) => {
+  console.log("In event listener", index)
   const response = await fetch(likeUrl, {
     method: 'POST',
     headers: {
@@ -198,29 +206,25 @@ displayShow()
 
 //API for post Comment
 
-const postComment = async (index, userName, comment) => {
-  console.log("Inside Postcomment", index)
-  const response = await fetch(commentUrl, {
+const postComment = async (index, username, comment) => {
+  await fetch(commentUrl, {
     method: 'POST',
-    headers: {
-      'content-Type': 'application/json; charset=UTF-8',
+        body: JSON.stringify({
+    item_id: index,
+    username,
+    comment,
     },
-    body: JSON.stringify({
-      item_id: index,
-    userName,
-    comment
-    }),
+    ),
+    headers: {'content-Type': 'application/json; charset=UTF-8',},
   });
 
-    return response;
 };
 postComment()
 //API for get comment
-const getComment = async () => {
-  const response = await fetch(commentUrl);
+const getComment = async (index) => {
+  const response = await fetch(`${commentUrl}?item_id=${index}`);
   const user = await response.json();
-  console.log(user)
-    return user;
+  return user;
 };
 getComment()
 
