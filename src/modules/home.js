@@ -23,7 +23,7 @@ const getNumberOfLikes = (item) => {
     const movieCount = document.getElementById('movies-count');
     const display = await getUser();
     let innerHTML = '';
-    const items = display.slice(0, 6);
+    const items = display
     movieCount.textContent = items.length;
     const container = document.querySelector('.main-content');
     items.forEach((element, index) => {
