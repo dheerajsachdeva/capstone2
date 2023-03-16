@@ -1,5 +1,7 @@
 import './style.css';
+
 // eslint-disable-next-line
+
 import Movie from './asset/movie.jpg';
 
 const logo = document.getElementById('logo');
@@ -7,6 +9,7 @@ logo.src = Movie;
 
 // Creating a new Movie
 // eslint-disable-next-line
+
 
 const involvementId = 'VdUaJZjJhUjlpm3843JM';
 const likeUrl = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${involvementId}/likes/`;
@@ -29,7 +32,6 @@ const getUser = async () => {
   const user = await response.json();
   return user;
 };
-
 const getNumberOfLikes = (item) => {
   if (document.querySelector(`.item[data-index="${item.item_id}"]`)) {
     const data = document.querySelector(
@@ -178,6 +180,7 @@ const likes = async (index) => {
     }),
   });
   return response;
+
 };
 
 const getLikes = async () => {
