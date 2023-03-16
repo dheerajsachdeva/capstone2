@@ -7,7 +7,7 @@
 
 .main-header {
   display: flex;
-  justify-content:left;
+  justify-content: left;
   align-items: center;
   gap: 20px;
   margin: 5% 3%;
@@ -40,11 +40,11 @@ a:hover {
   padding: 5px;
 }
 
-.like-icon{
-    background-color: red;
-    border: 2px solid red;
-    width: 24px;
-    height: 24px;
+.like-icon {
+  background-color: red;
+  border: 2px solid red;
+  width: 24px;
+  height: 24px;
 }
 
 .main-content {
