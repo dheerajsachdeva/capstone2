@@ -7,12 +7,15 @@
     <title>Hello</title>
     <link rel="stylesheet" href="style.css">
     <script src="index.js"  defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src='https://kit.fontawesome.com/a076d05399.js' defer crossorigin='anonymous'></script>
 <script defer src="runtime.js"></script><script defer src="main.js"></script></head>
 <body>
     <header class="main-header"> <img src="" alt="#" id="logo">
         <nav class="nav-bar">
             <ul class="header-link">
+
+                <a href="#"><li class="movies link">Movies(<span id="movies-count">0</span>)</li></a>
                 <a href="#"><li class="movies link">Movies</li></a>
                 <a href="#"><li class="about link">About</li></a>
                 <a href="#"><li class="contact link">Contact us</li></a>
@@ -20,6 +23,9 @@
         </nav>
     </header>
     <section class="main-content">
+        
+    </section>
+    <section class="popUp">
         
     </section>
     <footer> Created by Dheeraj & Basim under CC license</footer>
@@ -33,6 +39,27 @@
         <div class="count-container"><span class="counter"></span>
         <p>likes</p></div>
         <button class="commentBtn">Comment</button>
+    </div>
+
+
+    <div class="popup-blur">
+        <div class="popup-countainer">
+            <img class="comment-img" src="" alt="">
+            <h2 class="title"></h2>
+            <div class="detail">
+                <p class="langauge"></p>
+                <p class="runtime"></p>
+            </div>
+            <h3>Comments</h3>
+            <div class="comment-section">
+            </div>
+            <h3>Add a comment</h3>
+            <form action="submit">
+                <input type="text" placeholder="Your name">
+                <textarea name="comment-text" id="" cols="30" rows="10" placeholder="Your insight"></textarea>
+                <button type="submit"></button>
+            </form>
+        </div>
     </div>
 </template>
 </html>
