@@ -29,7 +29,6 @@ a {
 a:hover {
   text-decoration: underline;
   background-color: rgba(255, 217, 0, 0.167);
-
 }
 
 .header-link {
@@ -212,4 +211,3 @@ button:hover {
   background-color: #ebecf0;
   border: 5px solid #525201;
 }
-

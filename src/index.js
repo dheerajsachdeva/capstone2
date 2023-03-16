@@ -10,7 +10,6 @@ logo.src = Movie;
 // Creating a new Movie
 // eslint-disable-next-line
 
-
 const involvementId = 'VdUaJZjJhUjlpm3843JM';
 const likeUrl = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${involvementId}/likes/`;
 const commentUrl = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${involvementId}/comments`;
@@ -180,7 +179,6 @@ const likes = async (index) => {
     }),
   });
   return response;
-
 };
 
 const getLikes = async () => {
