@@ -9,6 +9,7 @@
 # 📗 Table of Contents
 
 - [📖 About the Project](#about-project)
+- [📺 Video presentation](#Video-presentation)
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
@@ -30,9 +31,12 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [Leaderboard] <a name="is about adding score by fetching data from API's"></a>
+# 📖 [Capstone Project 2] <a name="about-project"></a>
+Is a project about adding movies and TV shows by fetching and sending data from API's
 
-**[Leaderboard]** is based on HTML, CSS and Javascript.
+**[Capstone Project 2]** is based on HTML, CSS and Javascript.
+
+# 📺[ Video presentation](#) <a name="Video-presentation"></a> 
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -66,9 +70,22 @@
 ### Key Features <a name="key-features"></a>
 
 
-- **[Leaderboard is adding scoes by fetching data through API]**
-- **[Mobile and Desktop Version]**
-- **[using Javascript]**
+- **[Home page]**:
+ 1. When the page loads, the webapp retrieves data from:
+    - The selected API and shows the list of items on screen.
+    - The Involvement API to show the item likes.
+ 2. The page should make only 2 requests:
+    - One to the base API.
+    - One to the Involvement API.
+ 3. When the user clicks on the Like button of an item, the interaction is recorded in the Involvement API and the screen is
+updated.
+ 4. Home page header and navigation similar to the given mockup.
+ 5. Home page footer similar to the given mockup.
+- **[Comments popup]**
+ 1. When the popup loads, the webapp retrieves data from:
+    - The selected API and shows details about the selected item.
+ 2. The Involvement API to show the item comments.
+ 3. When the user clicks on the "Comment" button, the data is recorded in the Involvement API and the screen is updated.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -76,7 +93,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](https://dheerajsachdeva.github.io/leaderboard/dist/)
+- [Live Demo Link](#)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -117,8 +134,8 @@ You can deploy this project using:
 <!-- AUTHORS -->
 
 ## 👥 Authors <a name="DHEERAJ SACHDEVA"></a>
-
-
+## 👥 Dheeraj Sachdeva <a name="DHEERAJ SACHDEVA"></a>
+## 👥 Basim Aljazaeri <a name="Basim Aljazaeri"></a>
 👤 **Author**
 
 - GitHub: [@githubhandle](https://github.com/dheerajsachdeva)
@@ -132,10 +149,9 @@ You can deploy this project using:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-
-- [ ] **[Fetching API]**
 - [ ] **[Web Responsiveness]**
-- [ ] **[ES6 modules]**
+- [ ] **[Random Background Colors]**
+- [ ] **[Implement a “Load More” Button]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -171,9 +187,9 @@ I would like to thank Microverse and all my coding partners.
 
 > Add at least 2 questions new developers would ask when they decide to use your project.
 
-- **[What is Leaderboard?]**
+- **[What is Capstone 2 project]**
 
-  - [In this project, we are adding list by sending and fetching data from API's]
+  - [This Capstone project is about building your own web application based on an external API. You will select an API that provides data about a topic that you like and then build the webapp around it.]
 
 - **[What programming languages used in this project?]**
 
