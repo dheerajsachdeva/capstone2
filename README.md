@@ -42,7 +42,6 @@ Is a project about adding movies and TV shows by fetching and sending data from 
 
 ### Tech Stack <a name="tech-stack"></a>
 
-> Describe the tech stack and include only the relevant sections that apply to your project.
 
 <details>
   <summary>Client</summary>
@@ -111,23 +110,23 @@ In order to run this project you need: HTML and CSS
 
 Clone this repository to your desired folder:
 
-git clone git@github.com:dheerajsachdeva/leaderboard.git
+git clone git@github.com:dheerajsachdeva/capstone2.git
 
 ### Install
 
-Install this project with:
+Install this project with: for install on your machine you can clone the repo with command : git clone git@github.com:dheerajsachdeva/capstone2.git
 
 ### Usage
 
-To run the project, execute the following command:
+To run the project, execute the following command: npm run build and then npm start (You need to install webpack to use these commands)
 
 ### Run tests
 
-To run tests, run the following command:
+To run tests, run the following command: npm run test (You need to install jest Library to use these commands)
 
 ## Deployment
 
-You can deploy this project using:
+You can deploy this project using: git hub pages on your repository.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -161,7 +160,7 @@ You can deploy this project using:
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [https://github.com/dheerajsachdeva/leaderboard]
+Feel free to check the [git@github.com:dheerajsachdeva/capstone2.git]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -184,8 +183,6 @@ I would like to thank Microverse and all my coding partners.
 <!-- FAQ (optional) -->
 
 ## ❓ FAQ (OPTIONAL) <a name="faq"></a>
-
-> Add at least 2 questions new developers would ask when they decide to use your project.
 
 - **[What is Capstone 2 project]**
 
