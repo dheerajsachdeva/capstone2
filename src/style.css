@@ -55,8 +55,6 @@ a:hover {
 .main-content {
   margin: 5% 3% 5% 3%;
   display: grid;
-
-  /* justify-content: center; */
   align-items: center;
   grid-template-columns: auto auto auto;
   gap: 25px 70px;
@@ -114,8 +112,6 @@ a:hover {
   color: #fff;
   opacity: 1;
   background-color: rgba(0, 0, 0, 0.93);
-
-  /* animation: slideIN 0.6s linear both; */
 }
 
 .popup-countainer {
@@ -126,8 +122,6 @@ a:hover {
   margin: 0 5%;
   gap: 15px;
   background: #22323d;
-
-  /* height: 98vh; */
 }
 
 .img-container {
@@ -203,8 +197,6 @@ button {
   background-color: #1e2c36;
   align-self: center;
   padding: 2% 5%;
-
-  /* margin: 2% 0; */
   width: 70%;
   border: 1px solid #ebecf0;
   border-radius: 10px;
