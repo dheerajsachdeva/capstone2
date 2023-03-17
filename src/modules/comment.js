@@ -1,14 +1,15 @@
-import { getComment, postComment } from "./API";
+import { getComment, postComment } from './API.js';
+import { getCommentCount } from './counters.js';
 
 const appendComment = (comment) => {
-    const commentList = document.createElement('li');
-    commentList.innerHTML = ` <span class ="date">${comment.creation_date} </span> <span class="name">${comment.username} </span><span class="comment">${comment.comment}</span>`;
-    return commentList;
-  };
+  const commentList = document.createElement('li');
+  commentList.innerHTML = ` <span class ="date">${comment.creation_date} </span> <span class="name">${comment.username} </span><span class="comment">${comment.comment}</span>`;
+  return commentList;
+};
 
 const displayPopUp = async (element, index) => {
-    let innerHTML = '';
-    innerHTML += `<div id = "${element.id}" class="popup-blur">
+  let innerHTML = '';
+  innerHTML += `<div id = "${element.id}" class="popup-blur">
       <div class="popup-countainer">
       <i class="fa fa-close"></i>
           <div class ="img-container"><img class="comment-img" src="${element.image.original}" alt="">
@@ -33,47 +34,46 @@ const displayPopUp = async (element, index) => {
           </form>
           </div>
   </div>`;
-    const popUp = document.querySelector('.popUp');
-    popUp.innerHTML = innerHTML;
-    popUp.style.display = 'block';
-    const close = document.querySelector('.fa-close');
-    close.addEventListener('click', () => {
-      popUp.style.display = 'none';
-    });
-  
-    const commentList = document.querySelector('.commentList');
-    // eslint-disable-next-line
+  const popUp = document.querySelector('.popUp');
+  popUp.innerHTML = innerHTML;
+  popUp.style.display = 'block';
+  const close = document.querySelector('.fa-close');
+  close.addEventListener('click', () => {
+    popUp.style.display = 'none';
+  });
+
+  const commentList = document.querySelector('.commentList');
+  // eslint-disable-next-line
     const comments = await getComment(index);
-  
-    if (comments.length >= 1) {
+
+  if (comments.length >= 1) {
+    comments.forEach((comment) => {
+      commentList.appendChild(appendComment(comment));
+    });
+    document.querySelector('#comment-count').textContent = getCommentCount(comments);
+  }
+
+  const form = document.querySelector('.form');
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    const nameInput = document.querySelector('#name');
+    const textInput = document.querySelector('#text');
+    if (nameInput !== '' && textInput !== '') {
+      // eslint-disable-next-line
+        await postComment(index, nameInput.value, textInput.value);
+      const commentList = document.querySelector('.commentList');
+      commentList.innerHTML = '';
+      nameInput.value = '';
+      textInput.value = '';
+
+      // eslint-disable-next-line
+        const comments = await getComment(index);
       comments.forEach((comment) => {
         commentList.appendChild(appendComment(comment));
       });
       document.querySelector('#comment-count').textContent = comments.length;
     }
-  
-    const form = document.querySelector('.form');
-    form.addEventListener('submit', async (event) => {
-      event.preventDefault();
-      const nameInput = document.querySelector('#name');
-      const textInput = document.querySelector('#text');
-      if (nameInput !== '' && textInput !== '') {
-        // eslint-disable-next-line
-        await postComment(index, nameInput.value, textInput.value);
-        const commentList = document.querySelector('.commentList');
-        commentList.innerHTML = '';
-        nameInput.value = '';
-        textInput.value = '';
-        
-        // eslint-disable-next-line
-        const comments = await getComment(index);
-        console.log(comments)
-        comments.forEach((comment) => {
-          commentList.appendChild(appendComment(comment));
-        });
-        document.querySelector('#comment-count').textContent = comments.length;
-      }
-    });
-  };
+  });
+};
 
-  export {displayPopUp}
+export default displayPopUp;
