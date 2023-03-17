@@ -1,6 +1,6 @@
 import { getUser, likes, getLikes } from './API.js';
 import displayPopUp from './comment.js';
-import getMovieCount from './counters.js';
+import {getMovieCount} from './counters.js';
 
 const getNumberOfLikes = (item) => {
   if (document.querySelector(`.item[data-index="${item.item_id}"]`)) {
@@ -24,7 +24,7 @@ const displayShow = async () => {
   const movieCount = document.getElementById('movies-count');
   const display = await getUser();
   let innerHTML = '';
-  const items = display;
+  const items = display.slice(0,9);
   movieCount.textContent = getMovieCount(items);
   const container = document.querySelector('.main-content');
   items.forEach((element, index) => {
