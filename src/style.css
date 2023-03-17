@@ -172,8 +172,9 @@ a:hover {
 .form {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 10px;
   width: 90%;
+  margin: 2%;
 }
 
 #submit {
@@ -183,10 +184,14 @@ a:hover {
 
 input {
   color: #1e2c36;
+  font-size: large;
+  padding: 1%;
 }
 
 textarea {
   color: #1e2c36;
+  font-size: large;
+  padding: 1%;
 }
 
 footer {
@@ -210,4 +215,38 @@ button:hover {
   font-weight: 800;
   background-color: #ebecf0;
   border: 5px solid #525201;
+}
+
+textarea:focus {
+  color: #1e2c36;
+  font-weight: 800;
+  background-color: #ebecf0;
+  border: 5px solid #525201;
+  padding: 1%;
+}
+
+input:focus {
+  color: #1e2c36;
+  font-weight: 800;
+  background-color: #ebecf0;
+  border: 5px solid #525201;
+  padding: 1%;
+}
+
+textarea:hover {
+  color: #1e2c36;
+  font-weight: 800;
+  background-color: #ebecf0;
+  border: 5px solid #525201;
+  border-radius: 10px;
+  padding: 1%;
+}
+
+input:hover {
+  color: #1e2c36;
+  font-weight: 800;
+  background-color: #ebecf0;
+  border: 5px solid #525201;
+  border-radius: 10px;
+  padding: 1%;
 }
