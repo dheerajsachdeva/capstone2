@@ -43,9 +43,7 @@ const displayPopUp = async (element, index) => {
   });
 
   const commentList = document.querySelector('.commentList');
-  // eslint-disable-next-line
-    const comments = await getComment(index);
-
+  const comments = await getComment(index);
   if (comments.length >= 1) {
     comments.forEach((comment) => {
       commentList.appendChild(appendComment(comment));
@@ -59,15 +57,12 @@ const displayPopUp = async (element, index) => {
     const nameInput = document.querySelector('#name');
     const textInput = document.querySelector('#text');
     if (nameInput !== '' && textInput !== '') {
-      // eslint-disable-next-line
-        await postComment(index, nameInput.value, textInput.value);
+      await postComment(index, nameInput.value, textInput.value);
       const commentList = document.querySelector('.commentList');
       commentList.innerHTML = '';
       nameInput.value = '';
       textInput.value = '';
-
-      // eslint-disable-next-line
-        const comments = await getComment(index);
+      const comments = await getComment(index);
       comments.forEach((comment) => {
         commentList.appendChild(appendComment(comment));
       });

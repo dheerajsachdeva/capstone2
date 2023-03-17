@@ -12,12 +12,9 @@ const getNumberOfLikes = (item) => {
 };
 
 const displayLikes = async (index) => {
-  // eslint-disable-next-line
-    await likes(index);
-  // eslint-disable-next-line
-    const data = await getLikes();
-  // eslint-disable-next-line
-    const itemIndex = await data.forEach((item) => getNumberOfLikes(item));
+  await likes(index);
+  const data = await getLikes();
+  data.forEach((item) => getNumberOfLikes(item));
 };
 
 const displayShow = async () => {
@@ -49,15 +46,12 @@ const displayShow = async () => {
 
     const commentButton = document.querySelector(`.item[data-index="${index}"] .commentBtn`);
     commentButton.addEventListener('click', async () => {
-      // eslint-disable-next-line
-        displayPopUp(element, index);
+      displayPopUp(element, index);
     });
 
     likeButton.addEventListener('click', async () => {
-      // eslint-disable-next-line
-        await likes(index);
-      // eslint-disable-next-line
-        const data = await getLikes();
+      await likes(index);
+      const data = await getLikes();
       const itemIndex = await data.filter((item) => item.item_id === index);
 
       getNumberOfLikes(itemIndex[0]);
