@@ -93,7 +93,7 @@ updated.
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](#)
+- [Live Demo Link](https://dheerajsachdeva.github.io/capstone2/dist/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
