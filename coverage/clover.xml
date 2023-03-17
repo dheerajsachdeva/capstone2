@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1679042545173" clover="3.2.0">
+  <project timestamp="1679042545173" name="All files">
+    <metrics statements="20" coveredstatements="14" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="2" elements="25" coveredelements="16" complexity="0" loc="20" ncloc="20" packages="1" files="1" classes="1"/>
+    <file name="API.js" path="C:\Users\HP 612\Desktop\Module 2\capstone2\src\modules\API.js">
+      <metrics statements="20" coveredstatements="14" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="2"/>
+      <line num="1" count="2" type="stmt"/>
+      <line num="2" count="2" type="stmt"/>
+      <line num="3" count="2" type="stmt"/>
+      <line num="5" count="2" type="stmt"/>
+      <line num="6" count="0" type="stmt"/>
+      <line num="7" count="0" type="stmt"/>
+      <line num="8" count="0" type="stmt"/>
+      <line num="11" count="2" type="stmt"/>
+      <line num="12" count="0" type="stmt"/>
+      <line num="21" count="0" type="stmt"/>
+      <line num="24" count="2" type="stmt"/>
+      <line num="25" count="1" type="stmt"/>
+      <line num="26" count="1" type="stmt"/>
+      <line num="27" count="1" type="stmt"/>
+      <line num="32" count="2" type="stmt"/>
+      <line num="33" count="0" type="stmt"/>
+      <line num="45" count="2" type="stmt"/>
+      <line num="46" count="1" type="stmt"/>
+      <line num="47" count="1" type="stmt"/>
+      <line num="48" count="1" type="stmt"/>
+    </file>
+  </project>
+</coverage>
